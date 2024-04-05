@@ -1,7 +1,7 @@
 server:
   port: 3042
   
-database:
+db:
   host: 149.50.128.86
   port: 35000
   user: user

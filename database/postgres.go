@@ -46,12 +46,13 @@ func NewPostgresDatabase(conf *config.Config) Database {
 		// panic si errores
 		if err != nil {
 			panic("Fallo La Conexion a la Base de Datos")
+		} else {
+			fmt.Println("Conexion a DB Exitosa!")
 		}
 
 		// caso contrario asignamos la instancia a nuestra variable
 		dbInstance = &postgresDatabase{Db: db}
 	})
-
 	// y la retornamos
 	return dbInstance
 
