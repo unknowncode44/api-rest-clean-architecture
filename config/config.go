@@ -13,6 +13,7 @@ type (
 		// la configuracion general sera del servidor y la db
 		Server *Server
 		Db     *Db
+		Bcra   *Bcra
 	}
 
 	// del servidor solo necesitamos el puerto
@@ -28,6 +29,11 @@ type (
 		Password string
 		DBName   string
 		TimeZone string
+	}
+
+	Bcra struct {
+		Url   string
+		Token string
 	}
 )
 

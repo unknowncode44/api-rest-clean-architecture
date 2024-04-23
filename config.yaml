@@ -6,6 +6,10 @@ db:
   port: 35000
   user: user
   password: password
-  dbname: golang
+  dbname: quinar
   # sslmode: disable
   timezone: america/buenos_aires
+
+bcra:
+  url: https://api.estadisticasbcra.com/usd_of
+  token: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDM5MTA1MDcsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJtYXRpYXoub3JlbGxhbmFAZ21haWwuY29tIn0.o_LpZ2m15xeF9f5PCr5hzh6iIEvhVDwn0mToZvcWDwrzdXT17sD6JS46u4MSo9Mbm0rpijkfQ2WGOmS3zFINpQ
