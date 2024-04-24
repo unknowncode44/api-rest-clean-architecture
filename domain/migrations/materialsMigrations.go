@@ -5,7 +5,7 @@ import (
 
 	"github.com/unknowncode44/api-rest-clean-architecture/config"
 	"github.com/unknowncode44/api-rest-clean-architecture/database"
-	entities "github.com/unknowncode44/api-rest-clean-architecture/materials/entity"
+	"github.com/unknowncode44/api-rest-clean-architecture/domain"
 )
 
 func main3() {
@@ -15,8 +15,8 @@ func main3() {
 }
 
 func materialsMigrate(db database.Database) {
-	db.GetDb().Migrator().CreateTable(&entities.Material{})
-	db.GetDb().CreateInBatches([]entities.Material{
+	db.GetDb().Migrator().CreateTable(&domain.Material{})
+	db.GetDb().CreateInBatches([]domain.Material{
 
 		{
 			SystemCode:        "MAT-1234",
@@ -65,7 +65,7 @@ func materialsMigrate(db database.Database) {
 		},
 	}, 10).Preload("Suppliers").Preload("Updates")
 
-	mat := []entities.Material{}
+	mat := []domain.Material{}
 	db.GetDb().Debug().Find(&mat)
 
 	fmt.Print(mat)
