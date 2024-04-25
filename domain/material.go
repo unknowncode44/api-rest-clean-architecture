@@ -9,7 +9,7 @@ type (
 	/*        Materiales        */
 	/*--------------------------*/
 
-	InsertedMaterialDto struct {
+	InsertMaterialDto struct {
 		Id                    uint32       `gorm:"primaryKey;autoIncrement" json:"id"`
 		SystemCode            string       `gorm:"unique; not null;" json:"system_code"`
 		Description           string       `json:"description"`
@@ -41,3 +41,10 @@ type (
 		MeasurementUnit   string       `json:"measurement_unit"`
 	}
 )
+
+type MaterialRepository interface {
+	InsertMaterialData(in *InsertMaterialDto) error
+	FetchMaterialData(materialId *int) (Material, error)
+	UpdateMaterialData(up *InsertMaterialDto) error
+	FindAllMaterials() ([]Material, error)
+}
